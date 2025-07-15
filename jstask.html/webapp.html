@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome Checker</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        text-align: center;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgpa(0, 0, 0, 00.1);
+      }
+      input {
+        padding: 10px;
+        margin: 15px;
+        width: 250px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 15px;
+        background-color:burlywood;
+        color: black;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Palindrome Checker</h1>
+      <input type="text" id="inputtext" placeholder="Enter number/text" />
+      <button onclick="CheckPalindrome()">Check</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      function CheckPalindrome() {
+        var input = document.getElementById("inputtext").value;
+        var Original = input.toLowerCase();
+        var reversed = Original.split("").reverse().join("");
+        var result = document.getElementById("result");
+        
+        if (Original === "") {
+          result.textContent = "Please enter some text or number.";
+        } else if (Original === reversed) {
+          result.textContent = `"${input}" is a palindrome!`;
+        } else {
+          result.textContent = `"${input}" is not a palindrome.`;
+        }
+      }
+    </script>
+  </body>
+</html>
