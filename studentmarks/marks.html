@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studentmarks</title>
+    <style>
+        body{
+           justify-content:center;
+        }
+        table{
+            text-align: center;
+            height: 600px;
+            width: 1000px;
+            margin: 20px 10px 20px 320px ;
+            font-size: 25px;
+        }
+        h1{
+            text-align: center;
+            font-size: 45px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+            padding: 20px 10px;
+        }
+#tabledetails{
+    color: black;
+    background-color:bisque;
+text-align: center;
+}
+button:hover{
+color: black;
+background-color: azure;
+}
+button{
+    padding:6px 12px;
+    background-color: chocolate;
+    color: azure;
+    border-radius: 6px;
+    cursor: pointer;
+}
+div{
+    border: 2px solid black;
+    background-color: beige;
+    border-radius: 100px;
+    padding: 30px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Student Marks</h1>
+    <table id="tabledetails" border="3" cellpadding="25" cellspacing="0">
+       
+        <tr>
+        <th>Name</th>
+        <th>Maths</th>
+        <th>Science</th>
+        <th>Social</th>
+        <th>English</th>
+        <th>Kannada</th>
+        <th>Hindi</th>
+        <th>Total</th>
+        <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>Indira</td>
+            <td>82</td>
+            <td>56</td>
+            <td>78</td>
+            <td>89</td>
+            <td>98</td>
+            <td>78</td>
+            <td id="total1"></td>
+            <td><button onclick="calculateTotal('total1',82,56,78,89,98,78)">submit</button></td>
+        </tr>
+         <tr>
+            <td>Priya</td>
+            <td>89</td>
+            <td>66</td>
+            <td>98</td>
+            <td>79</td>
+            <td>98</td>
+            <td>68</td>
+           <td id="total2"></td>
+            <td><button onclick="calculateTotal('total2',89,66,98,79,98,68)">submit</button></td>
+        </tr>
+         <tr>
+            <td>Vishnu</td>
+            <td>88</td>
+            <td>90</td>
+            <td>79</td>
+            <td>69</td>
+            <td>82</td>
+            <td>85</td>
+            <td id="total3"></td>
+            <td><button onclick="calculateTotal('total3',88,90,79,69,82,85)">submit</button></td>
+        </tr>
+         <tr>
+            <td>Sowjanya</td>
+            <td>92</td>
+            <td>86</td>
+            <td>48</td>
+            <td>99</td>
+            <td>68</td>
+            <td>88</td>
+            <td id="total4"></td>
+            <td><button onclick="calculateTotal('total4',92,86,48,99,68,88)">submit</button></td>
+        </tr>
+         <tr>
+            <td>Sanjana</td>
+            <td>61</td>
+            <td>57</td>
+            <td>72</td>
+            <td>49</td>
+            <td>53</td>
+            <td>82</td>
+            <td id="total5"></td>
+            <td><button onclick="calculateTotal('total5',61,57,72,49,53,82)">submit</button></td>
+        </tr>
+        
+    </table>
+
+
+    <script>
+ function calculateTotal(td,a,b,c,d,e,f,g) {
+      const total=Number(a) + Number(b) + Number(c) + Number(d) + Number(e) + Number(f);
+      document.getElementById(td).innerText=total;
+      
+    }
+
+    </script>
+
+    </div>
+</body>
+</html>
