@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.T4AQv1O86WibOvwdt7hcWwHaKo?w=116&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3">
+    <style>
+      body {
+        align-items: center;
+        color:blanchedalmond;
+       
+        h2{
+          font-size: 37px;
+          color:blue;
+        }
+      }
+      div {
+        text-align: center;
+        justify-content: center;
+        border: 2px solid black;
+        margin: 160px 100px 50px 560px;
+        height: 500px;
+        width: 600px;
+        align-items: center;
+        line-height: 40px;
+        box-sizing: border-box;
+       box-shadow: 0px 5px 5px 5px gray;
+        background-color:lavender;
+      }
+      input,
+      select,
+      button{
+        height: 38px;
+        width: 200px;
+        background-color: lavenderblush;
+        color: black;
+        text-align: center;
+        margin: 13px;
+        font-size: 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+      input,select,button:hover{
+        cursor: pointer;
+      }
+      label{
+        font-size: 30px;
+        color: black;
+      }
+      #result{
+font-size: 28px;
+color:tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Simple Calculator</h2>
+      <label>Number1:</label>
+      <input type="number1" id="num1" placeholder="Enter number1" /><br />
+      <label>Number2:</label>
+      <input type="number2" id="num2" placeholder="Enter number2" /><br />
+      <label for="select">Operator:</label>
+      <select name="operator" id="operation">
+        <option>--Select--</option>
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option></select
+      ><br />
+      <button onclick="calculate()">calculate</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      function add(a, b) {
+        return a + b;
+      }
+      function subtract(a, b) {
+        return a - b;
+      }
+      function multiply(a, b) {
+        return a * b;
+      }
+      function divide(a, b) {
+        if (b == 0) return "Error:Cannot divide by zero";
+        return a / b;
+      }
+      function calculate() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const operator = document.getElementById("operation").value;
+        let result;
+        switch (operator) {
+          case "add":
+            result = add(num1, num2);
+            break;
+          case "subtract":
+            result = subtract(num1, num2);
+            break;
+          case "multiply":
+            result = multiply(num1, num2);
+            break;
+          case "divide":
+            result = divide(num1, num2);
+            break;
+        }
+        document.getElementById("result").innerText = "Result:" + result;
+      }
+    </script>
+  </body>
+</html>
