@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.JaXvMFlRJd8UqTo3S457GgHaDI?w=328&h=147&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3">
+    <style>
+      body {
+        align-items: center;
+        background-color: beige;
+        h2 {
+          font-size: 43px;
+          color: white;
+          background-color:darkorange;
+          width: 450px;
+          height: 45px;
+          align-items: center;
+          text-align: center;
+          margin-left:70px;
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          border-radius: 6px;
+        }
+      }
+      .container {
+        text-align: center;
+        justify-content: center;
+        border: 2px solid black;
+        margin: 160px 100px 50px 560px;
+        height: 500px;
+        width: 600px;
+        align-items: center;
+        line-height: 40px;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 5px 5px violet;
+        background-color: aqua;
+        border-radius: 60px;
+      }
+      input,
+      button {
+        height: 38px;
+        width: 200px;
+        background-color: lavenderblush;
+        color: black;
+        text-align: center;
+        margin: 25px;
+        font-size: 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+      input,
+      button:hover {
+        cursor: pointer;
+      }
+      button:hover{
+                color: blue
+      }
+      input:hover{
+        color: blue;
+      }
+      label {
+        font-size: 30px;
+        color: black;
+      }
+      #result {
+        font-size: 25px;
+        color:red;
+        word-spacing: 3px;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Age Calculator</h2>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" />
+      <button onclick="calculateAndDisplayAge()">Calculate Age</button>
+      <button onclick="resetForm()">Reset</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      // document.getElementById("dob").max = new Date()
+      //   .toISOString()
+      //   .split("T")[0];
+
+      function calculateAge(dob) {
+        const birthDate = new Date(dob);
+        const today = new Date();
+
+        if (birthDate > today) return null;
+
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
+
+        if (days < 0) {
+          months--;
+          const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+          days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        return { years, months, days };
+      }
+
+      function displayResult(ageObj) {
+        const resultDiv = document.getElementById("result");
+        if (!ageObj) {
+          resultDiv.innerText = "Please enter a valid past date of birth.";
+        } else {
+          resultDiv.innerText = `You are ${ageObj.years} years, ${ageObj.months} months, and ${ageObj.days} days old.`;
+        }
+      }
+
+      function calculateAndDisplayAge() {
+        const dob = document.getElementById("dob").value;
+        const age = calculateAge(dob);
+        displayResult(age);
+      }
+
+      function resetForm() {
+        document.getElementById("dob").value = "";
+        document.getElementById("result").innerText = "";
+      }
+    </script>
+  </body>
+</html>
