@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite Fruit List</title>
+</head>
+<body>
+    <script>
+let fruits=["Apple","Banana","Grapes","Mango","Orange"];
+for(let i=0;i<fruits.length;i++){
+console.log("Original List: ",JSON.stringify(fruits));
+}
+
+fruits.push("Pineapple");
+for(let i=1;i<fruits.length;i++){
+console.log("After Push:",JSON.stringify(fruits));
+}
+
+fruits.shift();
+for(let i=1;i<fruits.length;i++){
+console.log("After shift:",JSON.stringify(fruits));
+}
+
+console.log("Sorted:",JSON.stringify(fruits.sort()));
+console.log("Total fruits:",JSON.stringify(fruits.length));
+
+    </script>
+</body>
+</html>
+
