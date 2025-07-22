@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Manipulation</title>
+  </head>
+  <body>
+    <h2>String manipulation</h2>
+    <input type="text" id="userinput" placeholder="Enter sentence" />
+    <button onclick="string()">Submit</button>
+    <pre id="output"></pre>
+
+    <script>
+      function string() {
+        const input = document.getElementById("userinput").value;
+        const upper = input.toUpperCase();
+        const lower = input.toLowerCase();
+        const length = input.length;
+        const firstFive = input.slice(0, 5);
+        const replaced = input.replace("-", "_");
+        const includes = input.includes("JavaScript");
+        const trimmed = input.trim();
+        const capitalized =
+          input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+        const reversed = input.split("").reverse().join("");
+        const output = `
+       Uppercase:  ${upper}
+
+       Lowercase:  ${lower} 
+
+       Length:     ${length} 
+
+       firstFive:  ${firstFive} 
+
+       replaced:   ${replaced} 
+
+       includes:   ${includes}
+
+       trimmed:    ${trimmed} 
+
+       capatalized:${capitalized} 
+
+       reversed:   ${reversed}`;
+
+        document.getElementById("output").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
