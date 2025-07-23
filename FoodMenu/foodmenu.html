@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="food.css" />
+  </head>
+  <body>
+    
+      <nav>
+        <h1><img src="https://png.pngtree.com/png-vector/20221106/ourmid/pngtree-burger-line-art-illustration-png-image_6417874.png" alt=""> TASTY BITES</h1>
+        <a href="#" class="home">Menu</a>
+        <a href="#" class="menu">Home</a>
+        <a href="#" class="contact">Contact &#128274;</a>
+      </nav>
+      <pre style="font-size: 20px;text-align: left;">count<span id="cart-count"></span></pre>
+    <main>
+      <h2>Menu</h2>
+      <button id="toggle-menu" style="margin: 0px 50px 20px 700px;" >Hide Menu</button>
+      <article>
+      <div class="all">All</div>
+      <div class="starter">Starters</div>
+      <div class="maincourse">Main Course</div>
+      <div class="desserts">Desserts</div>
+       
+</main>
+ 
+</article>
+      <section class="list" id="menu-list">
+        <div class="food-item">
+          <img src="https://static.vecteezy.com/system/resources/previews/028/709/077/large_2x/plate-bruschetta-food-generate-ai-photo.jpg" alt="Bruschetta" />
+          <h3>Bruschetta</h3>
+          <p style="text-align: justify;">Grilled bread with garlic tomatoes,and basil</p>
+          <span><p>$5.99</p>
+          <button onclick="addToCart()">Add to Cart</button></span>
+        </div>
+
+        <div class="food-item">
+          <img src="https://img.freepik.com/premium-photo/pizza-margherita-white-plate-white-background_864588-11323.jpg" alt="Margherita Pizza" />
+          <h3>Margherita Pizza</h3>
+          <p style="text-align:justify;">Classic pizza with tomatoes mozzarella,and basil</p>
+          <span><p>$12.99</p>
+          <button onclick="addToCart()">Add to Cart</button></span>
+        </div>
+
+        <div class="food-item">
+          <img src="https://www.foodbasics.ca/userfiles/image/recipes/2022/grilled-salmon2x-2.jpg" alt="Grilled Salmon" />
+          <h3>Grilled Salmon</h3>
+          <p style="text-align: justify;">Salmon fillet with a side of vegetables</p>
+          <span><p>$18.99</p>
+          <button onclick="addToCart()">Add to Cart</button></span>
+        </div>
+          <div class="food-item">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.GDPeDAqxO-K1urVustk9AQHaHa?w=1960&h=1960&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tiramisu" />
+          <h3>Tiramisu</h3>
+          <p style="text-align: justify;">Classic Italian dessert with mascarpone and coffee</p>
+          <span><p>$6.99</p>
+          <button onclick="addToCart()">Add to Cart</button></span>
+        </div>
+                  
+      </section>
+
+    <script src="food.js"></script>
+  </body>
+</html>
