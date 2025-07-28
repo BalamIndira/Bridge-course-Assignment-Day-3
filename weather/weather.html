@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <style>
+     body {
+  background: url(https://wallpapers.com/images/hd/white-color-background-ghw6e685ri75chj4.jpg);
+}
+
+.container{
+  border: 2px solid black;
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+  margin: 250px 90px 30px 650px;
+  border-radius: 10px;
+  background:linear-gradient(to right bottom,lightgrey,white);
+}
+
+      .search {
+        /* margin: 280px 20px 20px 90px; */
+        border-radius: 20px;
+        height: 22px;
+        border: 2px solid black;
+        padding: 10px 20px 10px 20px;
+        width: 220px;
+        background:linear-gradient(to left bottom,skyblue);
+      }
+      .search::placeholder {
+        color: white;
+        font-size: 20px;
+        text-align: center;
+      }
+      .search:hover{
+        background: blue;
+        cursor: pointer;
+         color: white;
+      }
+      .input {
+        text-align: center;
+      }
+      .displayweather{
+        align-items: center;
+        justify-content: center;
+        margin: -15px 200px 0px 220px;
+        font-size: 20px;
+      }
+      .submit{
+        border: 2px solid black;
+        border-radius: 18px;
+        height: 43px;
+        width: 50px;
+        margin:9px 10px 7px -55px ;
+        /* font-size: 22px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <div class="input">
+      <input
+        type="text"
+        class="search"
+        id="inputValue"
+        placeholder="Enter city" />
+      <button id="button" class="submit">&#x1F50D</button>
+    </div>
+    <div>
+      <div class="displayweather">
+        <h3 id="city"></h3>
+        <p id="nameVal"></p>
+        <p id="temp"></p>
+        <p id="desc"></p>
+      </div>
+    </div>
+</div>
+    <script src="weather1.js"></script>
+  </body>
+</html>
